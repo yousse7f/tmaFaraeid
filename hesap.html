@@ -11,6 +11,7 @@
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="rfra.css">
+    
 </head>
 
 <body>
@@ -25,11 +26,11 @@
 
                     <a href="dros.html">الدروس</a>
 
-                    <a href="#" class="brand"> التمارين </a>
+                    <a href="#" class="brand">التمارين</a>
 
                     <a href="#">حول</a>
 
-                    <a href="dros.html">تواصل معي</a>
+                    <a href="con.html">تواصل معي</a>
                 </div>
             </div>
             <div class="mobile">
@@ -39,6 +40,8 @@
                 </a>
             </div>
         </nav>
+
+        
         <main>
 
             <section class="categories">
@@ -176,10 +179,15 @@
         </div>
     </div>
     <script>
+
+function toggleMenu() {
+            var sidenav = document.getElementById('sidenav');
+            sidenav.style.display = (sidenav.style.display == 'none' || sidenav.style.display == '') ? 'block' : 'none';
+        }
         // تعريف المتغيرات
 const inheritanceRows = [
     // 1صفوف الجدول
-    ["6"],
+    ["7"],
     ["8"],
     ["9"],
     ["10"],
