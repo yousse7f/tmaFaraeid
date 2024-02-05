@@ -11,96 +11,96 @@
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="rfra.css">
-    
+    <style>
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container">
-
         <nav>
             <div class="desktop">
                 <div>
                     <a class="" href="index.html">الرئيسية</a>
                 </div>
                 <div>
-                                
-                    <a href="#" class="brand">الدروس</a>  
-              
-                    <a href="nesf.html"> التمارين </a>  
-              
-                    <a href="#">حول</a>  
-              
-                    <a href="con.html">تواصل معي</a>  
+                    <a href="#" class="brand">الدروس</a>
+                    <a href="nesf.html"> التمارين </a>
+                    <a href="#">حول</a>
+                    <a href="con.html">تواصل معي</a>
                 </div>
             </div>
             <div class="mobile">
                 <a class="" href="#">الرئيسية </a>
                 <a class="menu-btn" href="javascript:void(0)" onclick="toggleMenu()">
-                    <i class="fa-solid fa-bars">
-                        
-                    </i>
+                    <i class="fa-solid fa-bars"></i>
                 </a>
             </div>
         </nav>
         <main>
-            
             <section class="categories">
-                <section class="categories">
-                    <h2>الأول الدرس</h2>
-                    <ul>
-                        <li>
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/DXMfZq1tuzA?si=_e7AlLab859AlTBw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                            <p>  الشيخ د/ منصور بن عبد الرحمن الصبحي</p>
-                        </li>
-                    </ul>
-                </section>
-                
-                <section class="categories">
-                     <div class="center">
-                            <a class="btn-view-all1" href="#">❮ الدرس السابق</a>
-                            <a class="btn-view-all1-active" href="#">1 </a>
-                            <a class="btn-view-all1" href="#">2 </a>
-                            <a class="btn-view-all1" href="#">3 </a>
-                            <a class="btn-view-all1" href="#">4 </a>
-                            <a class="btn-view-all1" href="#">5 </a>
-                            <a class="btn-view-all1" href="#">... </a>
-                            <a class="btn-view-all1"href="#">الدرس التالي ❯</a>
-                        </div>
-                </section>
-              
-          
+                <h2>الدرس الأول</h2>
+                <iframe id="videoFrame" src="https://www.youtube.com/embed/DXMfZq1tuzA?si=_e7AlLab859AlTBw"
+                    title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+                <p>الشيخ د/ منصور بن عبد الرحمن الصبحي</p>
             </section>
 
-           
-            <footer>
-                <div class="copyright">
-                    برمجة وتصميم أخوكم يوسف محمد عبد الله
-                    <br>
-                    طالب في كلية الشريعة بالمسجد النبوي
-                    <br>
-                    جميع الحقوق محفوظة © 1444 هـ - 2023 م.
+            <section class="categories">
+                <div class="center">
+                    <a class="btn-view-all1" href="#">❮ الدرس السابق</a>
+                    <a class="btn-view-all1" href="#" onclick="changeLesson(0)">الدرس التالي ❯</a>
                 </div>
-            </footer>
+            </section>
         </main>
+
+        <footer>
+            <div class="copyright">
+                برمجة وتصميم أخوكم يوسف محمد عبد الله
+                <br>
+                طالب في كلية الشريعة بالمسجد النبوي
+                <br>
+                جميع الحقوق محفوظة © 1444 هـ - 2023 م.
+            </div>
+        </footer>
         <div id="sidenav">
             <span class="close-btn" onclick="toggleMenu()">
                 <i class="fa-solid fa-xmark"></i>
             </span>
-             <a href="#">الدروس</a>  
-          
-                <a href="#" class="active"> التمارين </a>  
-          
-                <a href="#">حول</a>  
-          
-                <a href="#">تواصل معي</a>  
+            <a href="#">الدروس</a>
+            <a href="nesf.html" class="active"> التمارين </a>
+            <a href="#">حول</a>
+            <a href="con.html">تواصل معي</a>
         </div>
-    </div>
-    <script>
 
-    </script>
+        <script>
+            // قم بتعريف مصفوفة لتخزين الروابط
+            const lessonLinks = [
+                "https://www.youtube.com/embed/DXMfZq1tuzA?si=_e7AlLab859AlTBw",
+                "https://youtu.be/P9CYgUcWZeU?si=ybDF2pTMsXehJWcQ",
+                "https://youtu.be/5O9-r25lfYA?si=FTpRukLdVtTwT67s",
+                "https://youtu.be/hY3CukJEYFI?si=iVdaJTyBazrcozEK",
+                "https://youtu.be/fP1niJP0guY?si=5dIgWvjFZ3jbRMAc",
+                "",
+                "",
+
+                // قد تضيف المزيد من الروابط هنا
+            ];
+
+            function toggleMenu() {
+                var sidenav = document.getElementById('sidenav');
+                sidenav.style.display = (sidenav.style.display == 'none' || sidenav.style.display == '') ? 'block' : 'none';
+            }
+
+            function changeLesson(index) {
+                // قم بتغيير موقع الفيديو إلى الرابط الذي تحدده بالفهرس
+                document.getElementById('videoFrame').src = lessonLinks[index];
+            }
+        </script>
+    </div>
 </body>
 
 </html>
-
-
-
