@@ -186,9 +186,10 @@
         </div>
     </div>
     <script >
-
-
-
+ function toggleMenu() {
+            var sidenav = document.getElementById('sidenav');
+            sidenav.style.display = (sidenav.style.display == 'none' || sidenav.style.display == '') ? 'block' : 'none';
+        }
         // تعريف المتغيرات
 const inheritanceRows = [
     // 1صفوف الجدول
