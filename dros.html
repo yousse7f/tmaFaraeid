@@ -2,14 +2,16 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <title>الدروس</title>
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- CSS -->
     <link rel="stylesheet" href="rfra.css">
     <style>
         iframe {
@@ -34,7 +36,7 @@
                 </div>
             </div>
             <div class="mobile">
-                <a class="" href="#">الرئيسية </a>
+                <a class="" href="index.html">الرئيسية </a>
                 <a class="menu-btn" href="javascript:void(0)" onclick="toggleMenu()">
                     <i class="fa-solid fa-bars"></i>
                 </a>
@@ -42,8 +44,8 @@
         </nav>
         <main>
             <section class="categories">
-                <h2>الدرس الأول</h2>
-                <iframe id="videoFrame" src="https://www.youtube.com/embed/DXMfZq1tuzA?si=_e7AlLab859AlTBw"
+                <h2 id="lessonTitle">الدرس الأول</h2>
+                <iframe id="videoFrame" src="https://www.youtube.com/embed/23SMnKbbCwo?si=Aict3RxHFLZJyZgj" 
                     title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen></iframe>
                 <p>الشيخ د/ منصور بن عبد الرحمن الصبحي</p>
@@ -51,8 +53,8 @@
 
             <section class="categories">
                 <div class="center">
-                    <a class="btn-view-all1" href="#">❮ الدرس السابق</a>
-                    <a class="btn-view-all1" href="#" onclick="changeLesson(0)">الدرس التالي ❯</a>
+                    <a class="btn-view-all1" href="#" onclick="changeLesson(-1)">❮ الدرس السابق</a>
+                    <a class="btn-view-all1" href="#" onclick="changeLesson(1)">الدرس التالي ❯</a>
                 </div>
             </section>
         </main>
@@ -77,29 +79,44 @@
         </div>
 
         <script>
-            // قم بتعريف مصفوفة لتخزين الروابط
             const lessonLinks = [
-                "https://www.youtube.com/embed/DXMfZq1tuzA?si=_e7AlLab859AlTBw",
-                "https://youtu.be/P9CYgUcWZeU?si=ybDF2pTMsXehJWcQ",
-                "https://youtu.be/5O9-r25lfYA?si=FTpRukLdVtTwT67s",
-                "https://youtu.be/hY3CukJEYFI?si=iVdaJTyBazrcozEK",
-                "https://youtu.be/fP1niJP0guY?si=5dIgWvjFZ3jbRMAc",
-                "",
-                "",
-
-                // قد تضيف المزيد من الروابط هنا
+                "https://www.youtube.com/embed/JGqHCiGbT3Q?si=KPNO557Ev7eINrGL",
+                "https://www.youtube.com/embed/8-65kwqucdQ?si=lclJgtv9LcEF34-T",
+                "https://www.youtube.com/embed/LX9IvBc_jNw?si=GsZsaMWFa6kxJs_V",
+                "https://www.youtube.com/embed/Ekz8JyEgQXE?si=yBeQHyMmo5tAVhtB",
+                "https://www.youtube.com/embed/AwzqOWSC4RQ?si=-GoTeGoAr5rhgU9M"
+                // روابط الدروس الخامسة والسادسة وما بعدها
             ];
+
+            function changeLesson(index) {
+                const currentIndex = getCurrentIndex();
+                const newIndex = currentIndex + index;
+                if (newIndex >= 0 && newIndex < lessonLinks.length) {
+                    document.getElementById('videoFrame').src = lessonLinks[newIndex];
+                    const lessonTitles = [
+                        "الدرس الثاني",
+                        "الدرس الثالث",
+                        "الدرس الرابع",
+                        "الدرس الخامس",
+                        "الدرس السادس",
+                        ""
+                        // عناوين الدروس الخامسة وما بعدها
+                    ];
+                    document.getElementById('lessonTitle').textContent = lessonTitles[newIndex];
+                }
+            }
+
+            function getCurrentIndex() {
+                const currentSrc = document.getElementById('videoFrame').src;
+                return lessonLinks.findIndex(link => link === currentSrc);
+            }
 
             function toggleMenu() {
                 var sidenav = document.getElementById('sidenav');
                 sidenav.style.display = (sidenav.style.display == 'none' || sidenav.style.display == '') ? 'block' : 'none';
             }
-
-            function changeLesson(index) {
-                // قم بتغيير موقع الفيديو إلى الرابط الذي تحدده بالفهرس
-                document.getElementById('videoFrame').src = lessonLinks[index];
-            }
         </script>
+
     </div>
 </body>
 
