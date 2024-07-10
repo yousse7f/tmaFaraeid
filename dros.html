@@ -1,123 +1,568 @@
-<!DOCTYPE html>
-<html lang="en">
+@import url('https://fonts.googleapis.com/css2?family=Amiri&display=swap');
+:root {
+--white: #25343f;--black: rgba(95, 86, 5, 0.373);
+--transparent-black: rgb(244 244 244 / 73%);
+--black-border: #b3b3b3;
+--gradient-blue: linear-gradient(135deg, #25343fab, #ffcf31a1);
+--gradient-blue-default: #25343fab;
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الدروس</title>
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- CSS -->
-    <link rel="stylesheet" href="rfra.css">
-    <style>
-        iframe {
-            width: 100%;
-            height: 100%;
-        }
-    </style>
-</head>
+}
 
-<body>
-    <div class="container">
-        <nav>
-            <div class="desktop">
-                <div>
-                    <a class="" href="index.html">الرئيسية</a>
-                </div>
-                <div>
-                    <a href="#" class="brand">الدروس</a>
-                    <a href="nesf.html"> التمارين </a>
-                    <a href="#">حول</a>
-                    <a href="con.html">تواصل معي</a>
-                </div>
-            </div>
-            <div class="mobile">
-                <a class="" href="index.html">الرئيسية </a>
-                <a class="menu-btn" href="javascript:void(0)" onclick="toggleMenu()">
-                    <i class="fa-solid fa-bars"></i>
-                </a>
-            </div>
-        </nav>
-        <main>
-            <section class="categories">
-                <h2 id="lessonTitle">الدرس الأول</h2>
-                <iframe id="videoFrame" src="https://www.youtube.com/embed/23SMnKbbCwo?si=Aict3RxHFLZJyZgj" 
-                    title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-                <p>الشيخ د/ منصور بن عبد الرحمن الصبحي</p>
-            </section>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-            <section class="categories">
-                <div class="center">
-                    <a class="btn-view-all1" href="#" onclick="changeLesson(-1)">❮ الدرس السابق</a>
-                    <a class="btn-view-all1" href="#" onclick="changeLesson(1)">الدرس التالي ❯</a>
-                </div>
-            </section>
-        </main>
+html,
 
-        <footer>
-            <div class="copyright">
-                برمجة وتصميم أخوكم يوسف محمد عبد الله
-                <br>
-                طالب في كلية الشريعة بالمسجد النبوي
-                <br>
-                جميع الحقوق محفوظة © 1444 هـ - 2023 م.
-            </div>
-        </footer>
-        <div id="sidenav">
-            <span class="close-btn" onclick="toggleMenu()">
-                <i class="fa-solid fa-xmark"></i>
-            </span>
-            <a href="#">الدروس</a>
-            <a href="nesf.html" class="active"> التمارين </a>
-            <a href="#">حول</a>
-            <a href="con.html">تواصل معي</a>
-        </div>
 
-        <script>
-            const lessonLinks = [
-                "https://www.youtube.com/embed/JGqHCiGbT3Q?si=KPNO557Ev7eINrGL",
-                "https://www.youtube.com/embed/8-65kwqucdQ?si=lclJgtv9LcEF34-T",
-                "https://www.youtube.com/embed/LX9IvBc_jNw?si=GsZsaMWFa6kxJs_V",
-                "https://www.youtube.com/embed/Ekz8JyEgQXE?si=yBeQHyMmo5tAVhtB",
-                "https://www.youtube.com/embed/AwzqOWSC4RQ?si=-GoTeGoAr5rhgU9M"
-                // روابط الدروس الخامسة والسادسة وما بعدها
-            ];
+body {
+    direction: rtl;
+    font-family: 'Rubik', sans-serif;
+    color: var(--white);
+    background-color: var(--black);
+    overflow: hidden;
+    
+}
 
-            function changeLesson(index) {
-                const currentIndex = getCurrentIndex();
-                const newIndex = currentIndex + index;
-                if (newIndex >= 0 && newIndex < lessonLinks.length) {
-                    document.getElementById('videoFrame').src = lessonLinks[newIndex];
-                    const lessonTitles = [
-                        "الدرس الثاني",
-                        "الدرس الثالث",
-                        "الدرس الرابع",
-                        "الدرس الخامس",
-                        "الدرس السادس",
-                        ""
-                        // عناوين الدروس الخامسة وما بعدها
-                    ];
-                    document.getElementById('lessonTitle').textContent = lessonTitles[newIndex];
-                }
-            }
+button {
+    background-color: #064c11;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
 
-            function getCurrentIndex() {
-                const currentSrc = document.getElementById('videoFrame').src;
-                return lessonLinks.findIndex(link => link === currentSrc);
-            }
 
-            function toggleMenu() {
-                var sidenav = document.getElementById('sidenav');
-                sidenav.style.display = (sidenav.style.display == 'none' || sidenav.style.display == '') ? 'block' : 'none';
-            }
-        </script>
+.container {
+    height: 100vh;
+    overflow-y: auto;
+}
+nav>div {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.3);
+    justify-content: flex-start;
+}
 
-    </div>
-</body>
+nav .desktop,
+nav .mobile {
+    display: none;
+}
 
-</html>
+nav .desktop div {
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav div a {
+    position: relative;
+    padding: 20px;
+    text-decoration: none;
+    color: var(--white);
+    transition: all .3s;
+}
+
+nav div a:hover {
+    background-color: var(--black);
+}
+
+nav div a::after {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 5px;
+    width: 0;
+    transition: all .3s;
+    background-color: var(--gradient-blue-default);
+    background-image: var(--gradient-blue);
+}
+
+nav div a.brand {
+    font-weight: bold;
+}
+
+nav div a:hover::after {
+    width: 100%;
+}
+
+nav a.menu-btn {
+    font-size: 24px;
+}
+
+#sidenav {
+    display: none;
+    background-color: var(--transparent-black);
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    padding-top: 120px;
+    padding-bottom: 40px;
+    z-index: 1;
+    transition: all 1s;
+}
+
+#sidenav a {
+    display: block;
+    text-decoration: none;
+    padding: 20px 40px;
+    color: var(--white);
+    transition: all .3s;
+}
+
+#sidenav .close-btn {
+    display: inline-block;
+    position: absolute;
+    right: 5px;
+    top: 65px;
+    height: 50px;
+    line-height: 50px;
+    width: 50px;
+    text-align: center;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+#sidenav a:hover {
+    background-color: var(--gradient-blue-default);
+    background-image: var(--gradient-blue);
+}
+
+
+main {
+    height: 100%;
+}
+
+.parallax-effect {
+    height: 100%;
+    position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax-effect h1 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    color: var(--white);
+    text-align: center;
+    font-size: 50px;
+    padding: 0 20px;
+    text-shadow: 2px 2px 5px var(--black);
+}
+
+.parallax-effect h1 small {
+    display: block;
+    font-size: 26px;
+    line-height: 34px;
+    margin-top: 20px;
+    font-weight: normal;
+}
+
+.bg-img-1 {
+    background-image: url('abe97a0f-ad94-4495-b6b0-76bed85e6874.jpg');
+    
+}
+
+.bg-img-2 {
+    background-image: url('F-ugZ2-XwAAVS5o.jpg');
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+.categories {
+    padding: 0 20px;
+    
+}
+
+.categories .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.categories .grid .card {
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    position: relative;
+    padding: 50px 20px;
+    background-color: var(--gradient-blue-default);
+    background-image: var(--gradient-blue);
+    transition: all .3s;
+}
+
+.categories .grid .card:hover {
+    transform: translateY(-10px);
+}
+
+.categories .grid .card i {
+    display: block;
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.categories .grid .card span {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.categories .grid .card p {
+    text-align: center;
+    font-size: 20px;
+    line-height: 32px;
+}
+
+.categories .center {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.categories .btn-view-all {
+    display: inline-block;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 25px;
+    text-decoration: none;
+    color: var(--white);
+    overflow: hidden;
+    background-color: var(--gradient-blue-default);
+    background-image: var(--gradient-blue);
+    padding: 2px;
+}
+
+.categories .btn-view-all span {
+    display: block;
+    padding: 15px 25px;
+    background-color: var(--black);
+    border-radius: 25px;
+    transition: all .6s;
+}
+
+.categories .btn-view-all:hover span {
+    background-color: var(--gradient-blue-default);
+    background-image: var(--gradient-blue);
+}
+
+.categories{
+   margin-top: 100px;
+}
+
+.reviews h2 {
+    padding: 0 20px;
+}
+
+.reviews .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 30px;
+    padding: 60px 30px;
+}
+
+.reviews .grid .comment {
+    padding: 20px;
+    box-shadow: 2px 2px 5px var(--black-border);
+    border-radius: 10px;
+}
+
+.reviews .grid .comment blockquote {
+    line-height: 28px;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.reviews .grid .comment .author {
+    text-align: right;
+}
+
+.reviews .grid .comment blockquote::before {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 28px;
+    margin-right: 7px;
+    content: "\f10d";
+}
+
+.copyright {
+    text-align: center;
+    padding: 20px 15px 50px 15px;
+    line-height: 30px;
+    font-size: 15px;
+    margin-bottom: 5%;
+}
+
+@media(max-width: 920px) {
+    .categories .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .reviews .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media(max-width: 640px) {
+    nav .mobile {
+        display: flex;
+    }
+
+    .categories .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .reviews .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(min-width: 641px) {
+    nav .desktop {
+        display: flex;
+    }
+}
+
+
+.container{
+background-color: #f4f4f4;
+}
+table {
+background-color: rgba(250, 235, 215, 0.521);
+border-collapse: collapse;
+margin: 2px auto;
+padding: 20px;
+box-shadow: 2px 2px 5px var(--black-border);
+border-radius: 10px;
+
+
+
+
+}
+
+th, td {
+border: 0px solid black;
+padding: 10px;
+}
+
+
+td {
+border: 1px solid #000;
+padding: 2px;
+width: 20%;
+
+}
+input{
+border: 1ch;
+padding: 5%;
+height: 90%;
+width: 50%;
+margin: 2px;
+}
+
+
+
+.btn-view-all1{
+    display: inline-block;
+    text-align: center;
+    font-size: 18px;
+    /* border-radius: 50px; */
+    text-decoration: none;
+    color:#dddddd;
+    overflow: hidden;
+    padding: 2px;           
+    min-width: 4%;
+    padding-right: 12px;
+    padding-left: 12px;
+    flex: 1 0 100px;   
+
+    background-color:rgb(37 52 63);
+    background-repeat: no-repeat;
+    background-position: 10px 14px;
+    background-size: 14px;
+    padding: 0 16px 0 34px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 5px;
+    margin-left: 6px;
+    color: #fff;
+    transition: all .3s;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+
+
+.btn-view-all1:hover{
+
+    display: inline-block;
+    text-align: center;
+    font-size: 18px;
+    /* border-radius: 50px; */
+    text-decoration: none;
+    color:#dddddd;
+    overflow: hidden;
+    padding: 2px;           
+    min-width: 4%;
+    padding-right: 12px;
+    padding-left: 12px;
+    flex: 1 0 100px;   
+
+    background-color:rgba(37, 52, 63, 0.81);
+    background-repeat: no-repeat;
+    background-position: 10px 14px;
+    background-size: 14px;
+    padding: 0 16px 0 34px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 5px;
+    margin-left: 6px;
+    color: #fff;
+    transition: all .3s;
+    margin-bottom: 10px;
+    display: inline-block;
+    
+}
+.btn-view-all1-active{
+    display: inline-block;
+    text-align: center;
+    font-size: 18px;
+    /* border-radius: 50px; */
+    text-decoration: none;
+    color:#000000;
+    overflow: hidden;
+    padding: 2px;           
+    min-width: 4%;
+    padding-right: 12px;
+    padding-left: 12px;
+    flex: 1 0 100px;   
+    background-color:rgba(37, 52, 63, 0.397);
+    background-repeat: no-repeat;
+    background-position: 10px 14px;
+    background-size: 14px;
+    padding: 0 16px 0 34px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 5px;
+    margin-left: 6px;
+    transition: all .3s;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+
+
+@keyframes slidein {
+from {
+margin-left: 100%;
+width: 300%; 
+}
+
+to {
+margin-left: 0%;
+width: 100%;
+
+}
+}
+
+
+body {
+font-family: 'Arial', sans-serif;
+background-color: #f4f4f4;
+margin: 0;
+padding: 0;
+}
+
+.table-container {
+width: 80%;
+margin: 50px auto;
+overflow-x: auto;
+}
+
+table {
+width: 100%;
+border-collapse: collapse;
+background-color: #afafafb4;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+background-color: #3498db;
+color: #fff;
+}
+
+th, td {
+padding: 0px;
+text-align: center;
+border-bottom: 1% solid #dddddd;
+}
+
+
+tbody tr:hover {
+background-color: #89131331;
+}
+
+td{
+    width: 5%;
+
+}
+
+.comment{
+    font-family: 'Amiri', serif;
+}
+
+
+    .td-title-head{
+
+        background-color: #25343feb;
+        color: rgb(255 255 255);
+        height: 48px;
+    }
+    .td-title-head:hover{
+        background-color: #25343feb;
+
+    }
+
+.td-hr{
+    
+    border-block-color:var(--white);
+    border-top-width: 0px;
+    border-right-width: 0px;
+}
+
+.imgb4{vertical-align: middle;
+     border-style: none; width: 90px; 
+     height: 50px; padding: 1%;
+    }
+/* اخر تعديل */
+
+
