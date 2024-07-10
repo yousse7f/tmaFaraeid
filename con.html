@@ -20,17 +20,23 @@
         <nav>
             <div class="desktop">
                 <div>
-                    <a class="" href="index.html">الرئيسية</a>
+                    <a class="" href="index.html">
+                        <img class="imgb4" src="42849790.png"
+                            style="vertical-align: middle; border-style: none; width: 40px; height: 25px; padding: 1%;">
+                        <img class="imgb4" src="75845680 (1).png"
+                            style="vertical-align: middle; border-style: none; width: 40px; height: 25px; padding: 1%;">
+
+                    </a>
                 </div>
                 <div>
 
                     <a href="dros.html">الدروس</a>
 
-                    <a href="nesf.html" > التمارين </a>
+                    <a href="nesf.html"> التمارين </a>
 
-                    <a href="#">حول</a>
+                    <a href="abaut.html">حول</a>
 
-                    <a href="#" class="brand">تواصل معي</a>
+                    <a href="con.html" class="brand">تواصل معي</a>
                 </div>
             </div>
             <div class="mobile">
@@ -41,77 +47,90 @@
             </div>
         </nav>
         <main>
+            <div id="sidenav">
+                <span class="close-btn" onclick="toggleMenu()">
+                    <i class="fa-solid fa-xmark"></i>
+                </span>
+                <a href="dros.html">الدروس</a>
+    
+                <a href="nesf.html"> التمارين </a>
+    
+                <a href="abaut.html">حول</a>
+    
+                <a href="#" class="active">تواصل معي</a>
+            </div>
 
-         <style>
-                        body {
-                            direction: rtl;
-                            font-family: Arial, sans-serif;
-                            background-color: #f4f4f4;
-                            flex-direction: column;
-                            align-items: center;
-                            justify-content: center;
-                            min-height: 100vh;
-                        }
-                
-                        form {
-                            background-color: #fff;
-                            padding: 20px;
-                            border-radius: 8px;
-                            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                            margin: 20px;
-                            margin-top: 7%;
-                        }
-                
-                        label {
-                            display: block;
-                            margin-bottom: 8px;
-                        }
-                
-                        input, textarea {
-                            width: 100%;
-                            padding: 10px;
-                            margin-bottom: 16px;
-                            border: 1px solid #ccc;
-                            border-radius: 4px;
-                            box-sizing: border-box;
-                        }
-                
-                        button {
-                            background-color: #064c11;
-                            color: #fff;
-                            padding: 10px 20px;
-                            border: none;
-                            border-radius: 4px;
-                            cursor: pointer;
-                        }
-                
-                        button:hover {
-                            background-color: #04390d;
-                        }
-                    </style>
+            <style>
+                body {
+                    direction: rtl;
+                    font-family: Arial, sans-serif;
+                    background-color: #f4f4f4;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    min-height: 100vh;
+                }
 
-                        <form action="mailto:u9090dggr@gmail.com" method="post" enctype="text/plain">
-                            <label for="name">الاسم:</label>
-                            <input type="text" id="name" name="name" required>
-                    
-                            <label for="email">البريد الإلكتروني:</label>
-                            <input type="email" id="email" name="email" required>
-                    
-                            <label for="message">رسالتك:</label>
-                            <textarea id="message" name="message" rows="4" required></textarea>
-                    
-                            <button type="submit">إرسال</button>
-                        </form>
-                        <a href="index.html">
-                            <button>العودة للصفحة الرئيسية</button>
-                
-                        </a>
-                
-                
+                form {
+                    background-color: #fff;
+                    padding: 20px;
+                    border-radius: 8px;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                    margin: 20px;
+                    margin-top: 7%;
+                }
 
-                
-            
-            
+                label {
+                    display: block;
+                    margin-bottom: 8px;
+                }
+
+                input,
+                textarea {
+                    width: 100%;
+                    padding: 10px;
+                    margin-bottom: 16px;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    box-sizing: border-box;
+                }
+
+                button {
+                    background-color: #064c11;
+                    color: #fff;
+                    padding: 10px 20px;
+                    border: none;
+                    border-radius: 4px;
+                    cursor: pointer;
+                }
+
+                button:hover {
+                    background-color: #04390d;
+                }
+            </style>
+
+            <form action="mailto:u9090dggr@gmail.com" method="post" enctype="text/plain" style="margin-top:10%">
+                <label for="name">الاسم:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">البريد الإلكتروني:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">رسالتك:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">إرسال</button>
+            </form>
+            <a href="index.html">
+                <button>العودة للصفحة الرئيسية</button>
+
+            </a>
+
+
+
+
+
+
 
             <footer>
                 <div class="copyright">
@@ -127,22 +146,22 @@
             <span class="close-btn" onclick="toggleMenu()">
                 <i class="fa-solid fa-xmark"></i>
             </span>
-            <a href="#">الدروس</a>
+            <a href="dros.html">الدروس</a>
 
             <a href="#" class="active"> التمارين </a>
 
-            <a href="#">حول</a>
+            <a href="abaut.html">حول</a>
 
-            <a href="#">تواصل معي</a>
+            <a href="con.html">تواصل معي</a>
         </div>
     </div>
     <script>
-         function toggleMenu() {
+        function toggleMenu() {
             var sidenav = document.getElementById('sidenav');
             sidenav.style.display = (sidenav.style.display == 'none' || sidenav.style.display == '') ? 'block' : 'none';
         }
     </script>
-   
+
 </body>
 
 </html>

@@ -11,6 +11,7 @@
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="rfra.css">
+    <script src="functions.js"></script>
 </head>
 
 <body>
@@ -49,7 +50,18 @@
 
 هلك هالك وترك أم وأخت لأب وأخ لأب             
                         فما نصيب كل وارث؟.</p>
+                    
+                        <tr class="td-title-head">
+                            <!-- السف -->
+                            <td>النصيب</td>
+                            <td>الوارث</td>
+                            <td>اصل المسألة والسهام</td>
+                            <td>مصح المسألة</td>
+                        </tr>
+
                     <tr>
+                        <td>
+                        </td>
                         <td></td>
                         <td>
                             <input type="text" id="s1">
@@ -63,19 +75,27 @@
                         </td>
                     </tr>
                     <tr>
-                        <td> أم</td>
                         <td>
                             <input type="text" id="s4">
-                            <span id="m4"></span>
+                            <span id="m4"></span><br>
                         </td>
+                        <td> أم</td>
                         <td>
                             <input type="text" id="s5">
                             <span id="m5"></span>
                         </td>
+                        <td>
+                            <input type="text" id="s6">
+                            <span id="m6"></span>
+                        </td>
                     </tr>
                     
                     <tr>
-                        <td>أخت لاب<br>
+                        <td>
+                            <input type="text" id="s7">
+                            <span id="m7"></span><br>
+                        </td>
+                        <td>أخت لاب<hr class="td-hr">
                             أخ لاب
                         </td>
 
@@ -83,16 +103,16 @@
                       
                         
                         <td>
-                            <input type="text" id="s6">
-                            <span id="m6"></span>
+                            <input type="text" id="s8">
+                            <span id="m8"></span>
                         </td>
                        
                         
                         <td>
-                            <input type="text" id="s7">
-                            <span id="m7"></span>
-                            <input type="text" id="s8">
-                            <span id="m8"></span>
+                            <input type="text" id="s9">
+                            <span id="m9"></span>
+                            <input type="text" id="s10">
+                            <span id="m10"></span>
                         </td>
                     </tr>
                     
@@ -110,41 +130,60 @@
 هلكت هالكة وتركت زوجا وأما وأبا 
 
 فما نصيب كل وارث؟.</p>
+<tr class="td-title-head">
+    <td>النصيب</td>
+    <td>الوارث</td>
+    <td>اصل المسألة والسهام</td>
+</tr>
 <tr>
     <!-- السف -->
-    <td></td>
+    <td></td>   
+     <td></td>
+
     <td>
-        <input type="text" id="s9">
-        <span id="m9"></span><br>
+        <input type="text" id="s11">
+        <span id="m11"></span><br>
       
     </td>
     
 </tr>
 <tr>
+    <td>
+        <input type="text" id="s12">
+        <span id="m12"></span>
+    </td>
     <td> زوج </td>
     <td>
-        <input type="text" id="s10">
-        <span id="m10"></span>
+        <input type="text" id="s13">
+        <span id="m13"></span>
     </td>
     
    
 </tr>
                
                 <tr>
+                    <td>
+                        <input type="text" id="s14">
+                        <span id="m14"></span>
+                    </td>
                     <td>أم  </td>
 
                     <td>
-                        <input type="text" id="s11">
-                        <span id="m11"></span>
+                        <input type="text" id="s15">
+                        <span id="m15"></span>
                     </td>
                                        
                 </tr>
                 <tr>
+                    <td>
+                        <input type="text" id="s16">
+                        <span id="m16"></span>
+                    </td>
                     <td>أب</td>
 
                     <td>
-                        <input type="text" id="s12">
-                        <span id="m12"></span>
+                        <input type="text" id="s17">
+                        <span id="m17"></span>
                     </td>
                   
                     
@@ -192,42 +231,26 @@
             <a href="con.html">تواصل معي</a>
         </div>
     </div>
+    <script src="functions.js"></script>
     <script>
-         function toggleMenu() {
-            var sidenav = document.getElementById('sidenav');
-            sidenav.style.display = (sidenav.style.display == 'none' || sidenav.style.display == '') ? 'block' : 'none';
-        }
+let x = 1;
+for(x = 1; x <= 25; x++){}
         // تعريف المتغيرات
 const inheritanceRows = [
     // 1صفوف الجدول
     ["3"],["6"],["18"],
-    ["1"],["3"],
-    ["5"],["5"],
+     ["1/6"],["1"],["3"],
+     ["ب"],["5"],["5"],
     ["10"],
 
     //1صفوف الجدول 2
     ["6"],
-    ["3"],
-    ["1"],
-    ["2"]
+    ["1/2"],["3"],
+    ["1/6"],["1"],
+    ["ب"],["2"]
 ];
   
    
-
-  
-function setupCellValidation(inputId, statusId, correctValue) {
-    const inputCell = document.getElementById(inputId);
-    const statusCell = document.getElementById(statusId);
-  
-    inputCell.addEventListener("input", () => {
-      const value = inputCell.value.trim();
-      const isCorrect = value === correctValue;
-      const feedback = isCorrect ? "✔" : `✘\n${value}\nالجواب: ${correctValue}`;
-      statusCell.textContent = feedback;
-      statusCell.style.color = isCorrect ? "green" : "red";
-    });
-  }
-  
   for (let i = 0; i < inheritanceRows.length; i++) {
     for (let j = 0; j < inheritanceRows[i].length; j++) {
       const inputId = `s${i + 1}`;
@@ -240,3 +263,18 @@ function setupCellValidation(inputId, statusId, correctValue) {
 </body>
 
 </html>
+<!-- 
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+
+-->

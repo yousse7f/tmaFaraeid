@@ -19,7 +19,13 @@
         <nav>
             <div class="desktop">
                 <div>
-                    <a class="" href="index.html">الرئيسية</a>
+                    <a class="" href="index.html">
+                        <img class="imgb4" src="42849790.png"
+                            style="vertical-align: middle; border-style: none; width: 40px; height: 25px; padding: 1%;">
+                        <img class="imgb4" src="75845680 (1).png"
+                            style="vertical-align: middle; border-style: none; width: 40px; height: 25px; padding: 1%;">
+
+                    </a>
                 </div>
                 <div>
 
@@ -27,9 +33,9 @@
 
                     <a href="#" class="brand"> التمارين </a>
 
-                    <a href="#">حول</a>
+                    <a href="abaut.html">حول</a>
 
-                    <a href="#">تواصل معي</a>
+                    <a href="con.html">تواصل معي</a>
                 </div>
             </div>
             <div class="mobile">
@@ -45,87 +51,105 @@
                 <table>
                     <h4>تمرين على أصحاب النصف</h4>
                     <p>
-س/ هلكت هالكة وتركت زوجا وأخا شقيقا             
+                        س/ هلكت هالكة وتركت زوجا وأخا شقيقا
                         فما نصيب كل وارث؟.</p>
+
+
+                    <tr class="td-title-head">
+                        <!-- السف -->
+                        <td>النصيب</td>
+                        <td>الوارث</td>
+                        <td>اصل المسألة والسهام</td>
+                    </tr>
+
+
+
+
                     <tr>
                         <!-- السف -->
                         <td></td>
                         <td></td>
                         <td>
-                            <input type="text" id="s1">
-                            <span id="m1"></span><br>
+                            <input type="text">
+                            <span></span><br>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <input type="text" id="s2">
-                            <span id="m2"></span>
+                            <input type="text">
+                            <span></span>
                         </td>
                         <td>زوج</td>
                         <td>
-                            <input type="text" id="s3">
-                            <span id="m3"></span>
+                            <input type="text">
+                            <span></span>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <input type="text" id="s4">
-                            <span id="m4"></span>
+                            <input type="text">
+                            <span></span>
                         </td>
                         <td>أخ ش</td>
                         <td>
-                            <input type="text" id="s5">
-                            <span id="m5"></span>
+                            <input type="text">
+                            <span></span>
                         </td>
                     </tr>
                 </table>
 
-                
+
             </section>
             <section class="categories">
 
-            <table>
-                <p>
-س/ 
+                <table>
+                    <p>
+                        س/
 
-هلك هالك وترك ابنا وبنتا
+                        هلك هالك وترك ابنا وبنتا
 
-فما نصيب كل وارث؟.</p>
-                <tr>
-                    <!-- السف -->
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <input type="text" id="s6">
-                        <span id="m6"></span><br>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="text" id="s7">
-                        <span id="m7"></span>
-                    </td>
-                    <td>بنت</td>
-                    <td>
-                        <input type="text" id="s8">
-                        <span id="m8"></span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="text" id="s9">
-                        <span id="m9"></span>
-                    </td>
-                    <td> ابن</td>
-                    <td>
-                        <input type="text" id="s10">
-                        <span id="m10"></span>
-                    </td>
-                </tr>
-            </table>
+                        فما نصيب كل وارث؟.</p>
+                    <tr class="td-title-head">
+                        <!-- السف -->
+                        <td>النصيب</td>
+                        <td>الوارث</td>
+                        <td>اصل المسألة والسهام</td>
+                    </tr>
+                    <tr>
+                        <!-- السف -->
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <input type="text">
+                            <span></span><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text">
+                            <span></span>
+                        </td>
+                        <td>بنت</td>
+                        <td>
+                            <input type="text">
+                            <span></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text">
+                            <span></span>
+                        </td>
+                        <td> ابن</td>
+                        <td>
+                            <input type="text">
+                            <span></span>
+                        </td>
+                    </tr>
+                </table>
 
 
-           
+
             </section>
 
             <section class="categories">
@@ -155,57 +179,42 @@
             <span class="close-btn" onclick="toggleMenu()">
                 <i class="fa-solid fa-xmark"></i>
             </span>
-            <a href="#">الدروس</a>
+            <a href="dros.html">الدروس</a>
 
             <a href="#" class="active"> التمارين </a>
 
-            <a href="#">حول</a>
+            <a href="abaut.html">حول</a>
 
-            <a href="#">تواصل معي</a>
+            <a href="con.html">تواصل معي</a>
         </div>
     </div>
+    <script src="functions.js"></script>
     <script>
-         function toggleMenu() {
-            var sidenav = document.getElementById('sidenav');
-            sidenav.style.display = (sidenav.style.display == 'none' || sidenav.style.display == '') ? 'block' : 'none';
-        }
+
         // تعريف المتغيرات
-const inheritanceRows = [
-    // 1صفوف الجدول
-    ["2"],
-    ["1/2"],["1"],
-    ["ب"],["1"],
+        const inheritanceRows = [
+            // صفوف الجدول 1
+            ["2"],
+            ["1/2"], ["1"],
+            ["ب"], ["1"],
 
-    //1صفوف الجدول 2
-    ["3"],
-    ["ب"],["1"],
-    ["ب"],["2"]
-];
-  
-   
+            // صفوف الجدول 2
+            ["3"],
+            ["ب"], ["1"],
+            ["ب"], ["2"],
 
-  
-function setupCellValidation(inputId, statusId, correctValue) {
-    const inputCell = document.getElementById(inputId);
-    const statusCell = document.getElementById(statusId);
-  
-    inputCell.addEventListener("input", () => {
-      const value = inputCell.value.trim();
-      const isCorrect = value === correctValue;
-      const feedback = isCorrect ? "✔" : `✘\n${value}\nالجواب: ${correctValue}`;
-      statusCell.textContent = feedback;
-      statusCell.style.color = isCorrect ? "green" : "red";
-    });
-  }
-  
-  for (let i = 0; i < inheritanceRows.length; i++) {
-    for (let j = 0; j < inheritanceRows[i].length; j++) {
-      const inputId = `s${i + 1}`;
-      const statusId = `m${i + 1}`;
-      setupCellValidation(inputId, statusId, inheritanceRows[i][j]);
-    }
-  }
 
+        ];
+
+     
+
+        for (let i = 0; i < inheritanceRows.length; i++) {
+            for (let j = 0; j < inheritanceRows[i].length; j++) {
+                const input = inputs[i];
+                const span = spans[i];
+                setupCellValidation(input, span, inheritanceRows[i][j]);
+            }
+        }
     </script>
 </body>
 

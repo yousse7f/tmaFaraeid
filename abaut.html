@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>حول الموقع</title>
+
+    <style>
+        body {
+            /* font-family: Arial, sans-serif; */
+            margin: 20px;
+            direction: rtl;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 25px;
+            margin-bottom: 20px;
+
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        body {
+            /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+            margin: 20px;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        #head1 {
+            text-align: center;
+            margin-top: 75px;
+            background-color: #26343f;
+            color: #bb9661;
+            padding: 10px;
+        }
+
+        h1,
+        h2 {
+            color: #bb9661;
+        }
+
+        section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        #fot1 {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 25px;
+            color: #777;
+
+        }
+
+        /* تحسين التواصل مع الأجهزة الصغيرة */
+        @media (max-width: 600px) {
+            section {
+                padding: 10px;
+            }
+        }
+
+
+        nav>div {
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            z-index: 100;
+            background-color: rgba(0, 0, 0, 0.3);
+            justify-content: flex-start;
+        }
+
+        nav .desktop,
+        nav .mobile {
+            display: none;
+        }
+
+        nav .desktop div {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        nav div a {
+            position: relative;
+            padding: 20px;
+            text-decoration: none;
+            color: var(--white);
+            transition: all .3s;
+        }
+
+        nav div a:hover {
+            background-color: var(--black);
+        }
+
+        nav div a::after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 5px;
+            width: 0;
+            transition: all .3s;
+            background-color: var(--gradient-blue-default);
+            background-image: var(--gradient-blue);
+        }
+
+        nav div a.brand {
+            font-weight: bold;
+        }
+
+        nav div a:hover::after {
+            width: 100%;
+        }
+
+        nav a.menu-btn {
+            font-size: 24px;
+        }
+
+        #container_img1 {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* تنسيق الصورة الأصلية */
+        #image1 {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        /* تنسيق الصورة الضبابية */
+        #blurred_img1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            filter: blur(10px);
+            clip-path: inset(25% 25% 25% 25%);
+        }
+    </style>
+    <link rel="stylesheet" href="rfra.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <nav>
+            <div class="desktop">
+                <img class="imgb4" src="42849790.png"
+                    style="vertical-align: middle; border-style: none; width: 90px; height: 50px; padding: 1%;">
+                <div>
+                    <a href="index.html">الرئيسية
+
+                        
+                    </a>
+                </div>
+                <div>
+
+                    <a href="dros.html">الدروس</a>
+
+                    <a href="nesf.html"> التمارين </a>
+
+                    <a href="#" class="brand">حول</a>
+
+                    <a href="con.html">تواصل معي</a>
+                </div>
+            </div>
+            <div class="mobile">
+                <a class="brand" href="index.html">الرئيسية </a>
+                <a class="menu-btn" href="javascript:void(0)" onclick="toggleMenu()">
+                    <i class="fa-solid fa-bars">
+
+                    </i>
+                </a>
+            </div>
+        </nav>
+        <header id="head1">
+            <h1 style="color: #f7f7f7; ">حول الموقع</h1>
+        </header>
+
+        <section class="sc_n">
+            <h2>نبذة عن البرنامج</h2>
+            <p> هو برنامج تدريبي على حل المسائل الفرضية،، البرنامج من بربمجة الطالب في كلية المسجد النبوي :</p>
+        </section>
+
+        <section class="sc_n">
+            <h2>الجوائز </h2>
+            <p>فاز البرنامج في مسابقة اثراءفي مجال الأبحاث والابتكارات العلمية </p>
+            <div id="container_img1">
+                <img src="GO0nuTfWIAAT8l2.jpeg" alt="صورة ضبابية" id="blurred_img1" style="clip-path: inset(72% 38% 13% 38%);">
+                <img src="GO0nuTfWIAAT8l2.jpeg" alt="صورة" id="image1">
+            </div>
+            <img src="GPNvaXgXYAEeU_D.jpeg" alt="صورة المبرمج">
+
+        </section>
+
+        <section class="sc_n">
+            <h2>أهداف البرنج</h2>
+            <p>يهدف البرنامج إلى خدمة مادة الفرائض وتقريبها للطلبة بعد دراستها </p>
+        </section>
+
+        <section class="sc_n">
+            <h2>الفئات المستهدفة </h2>
+            <p>الطلاب والمتدربون على مادة الفرائض</p>
+        </section>
+
+        <section class="sc_n" style="text-align: center;">
+            <h2> فريق العمل </h2>
+            <div style="display:flex;">
+
+            </div>
+            <p>يوسف محمد عبد الله (مبرمج ومطور)</p>
+            <img src="GPNvaXgXYAEeU2_D.jpeg" style=" width: 150px;border-radius: 50%; margin-bottom: 10px;"
+                alt="صورة الكتاب">
+
+        </section>
+
+
+
+        <footer id="fot1">
+            <div>
+                برمجة وتصميم أخوكم يوسف محمد عبد الله
+                <br>
+                طالب في كلية الشريعة بالمسجد النبوي
+                <br>
+                جميع الحقوق محفوظة © 1444 هـ - 2023 م.
+            </div>
+        </footer>
+        <div id="sidenav">
+            <span class="close-btn" onclick="toggleMenu()">
+                <i class="fa-solid fa-xmark"></i>
+            </span>
+            <a href="dros.html">الدروس</a>
+
+            <a href="nesf.html"> التمارين </a>
+
+            <a href="#" class="active">حول </a>
+
+            <a href="con.html">تواصل معي</a>
+        </div>
+
+    </div>
+
+
+
+
+
+    <!-- 
+     <nav>
+        <div class="desktop">
+            <div>
+                <a class="" href="index.html">الرئيسية</a>
+            </div>
+            <div>
+
+                <a href="dros.html">الدروس</a>
+
+                <a href="nesf.html" > التمارين </a>
+
+                <a href="#">حول</a>
+
+                <a href="#" class="brand">تواصل معي</a>
+            </div>
+        </div>
+        <div class="mobile">
+            <a class="" href="index.html">الرئيسية </a>
+            <a class="menu-btn" href="javascript:void(0)" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </a>
+        </div>
+    </nav>
+    <div>
+        <div>
+            <h2>نبذة عن البرنامج</h2>
+            <p> هو برنامج تدريبي على حل المسائل الفرضية،، البرنامج من بربمجة الطالب في كلية المسجد النبوي :</p> 
+            <br>            
+            <h2>الجوائز </h2>
+            <p>فاز البرنامج في مسابقة اثراءفي مجال الأبحاث والابتكارات العلمية </p>
+        </div>
+
+        <div>
+            <h2>أهداف البرنج</h2>
+            <p>يهدف البرنامج إلى خدمة مادة الفرائض وتقريبها للطلبة بعد دراستها </p>
+        </div>
+
+        <div>
+            <h2>الفئات المستهدفة </h2>
+            <p>الطلاب والمتدربون على مادة الفرائض</p>
+        </div>
+
+        <div>
+            <h2> فريق العمل </h2>
+            <p>يوسف محمد عبد الله (مبرمج ومطور)</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="copyright">
+            برمجة وتصميم أخوكم يوسف محمد عبد الله
+            <br>
+            طالب في كلية الشريعة بالمسجد النبوي
+            <br>
+            جميع الحقوق محفوظة © 1444 هـ - 2023 م.
+        </div>
+    </footer>
+    -->
+
+    <script>
+        function toggleMenu() {
+            var sidenav = document.getElementById('sidenav');
+            sidenav.style.display = (sidenav.style.display == 'none' || sidenav.style.display == '') ? 'block' : 'none';
+        }
+    </script>
+</body>
+
+</html>
