@@ -17,12 +17,12 @@
 
     <style>
         :root {
-    --white: #064c11;
-    --black: rgba(95, 86, 5, 0.373);
+    --white: #25343f;
+    --black: rgba(107, 96, 5, 0.373);
     --transparent-black: rgb(244 244 244 / 73%);
-    --black-border: #b3b3b3;
-    --gradient-blue: linear-gradient(135deg, #064c11b8, #ffcf31a1);
-    --gradient-blue-default: #064c11d6;
+    --black-border: #a3a2a2;
+    --gradient-blue: linear-gradient(135deg, #25343fab, #ffcf31a1);
+    --gradient-blue-default: #25343fab;
 }
 
         * {
@@ -86,7 +86,6 @@
         }
 
         nav div a::after {
-            content: '';
             display: block;
             position: absolute;
             bottom: 0;
@@ -273,8 +272,8 @@
 
         .categories .btn-view-all span {
             display: block;
-            padding: 15px 25px;
-            background-color: var(--black);
+            padding: 5px 25px;
+            background-color:rgb(37 52 63);
             border-radius: 25px;
             transition: all .6s;
         }
@@ -365,7 +364,7 @@
     background-color: #f4f4f4;
 }
     table {
-    background-color: rgba(250, 235, 215, 0.521);
+    background-color: rgba(250, 235, 215, 0.59);
     border-collapse: collapse;
     margin: 2px auto;
     width: 100%;
@@ -525,8 +524,6 @@ tbody tr:hover {
     background-color: #89131331;
 }
 
-
-
     </style>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -543,6 +540,7 @@ tbody tr:hover {
 
         <nav>
             <div class="desktop">
+                <img class="imgb4" src="42849790.png">
                 <div>
                     <a class="brand" href="#">الرئيسية</a>
                 </div>
@@ -552,7 +550,7 @@ tbody tr:hover {
               
                     <a href="nesf.html" class="active"> التمارين </a>  
               
-                    <a href="#">حول</a>  
+                    <a href="abaut.html">حول</a>  
               
                     <a href="con.html">تواصل معي</a>  
                 </div>
@@ -582,10 +580,15 @@ tbody tr:hover {
                 <table>
                     <h4 id="h1-t1">نموذج التمارين</h4>
                     <p id="p-t">هلكت هالكة عن زوج وعم فما نصيب كل وارث</p>
+                    <tr class="td-title-head">
+                        <!-- السف -->
+                        <td>نصيب</td>
+                        <td>الوارث</td>
+                        <td>اصل المسألة والسهام</td>
+                    </tr>
                      <tr>            
                         <td></td>
                         <td></td>
-                        <!-- أصل المسألة -->
                         <td>
                             <input type="text" id="s1">
                             <span id="m1"></span>
@@ -593,12 +596,10 @@ tbody tr:hover {
                     </tr>
                     <tr>            
                         <td>
-                            <!-- نصيب الزوج -->
                             <input type="text" id="s2">
                             <span id="m2"></span>
                         </td>
                         <td>زوج</td>
-                        <!-- سهام الزوج -->
                         <td>
                             <input type="text" id="s3">
                             <span id="m3"></span>
@@ -606,12 +607,11 @@ tbody tr:hover {
                     </tr>
                     <tr>            
                         <td>
-                            <!-- نصيب العم -->
                             <input type="text" id="s4">
                             <span id="m4"></span>
                         </td>
                         <td>عم</td>
-                        <!-- سهام العم -->
+
                         <td>
                             <input type="text" id="s5">
                             <span id="m5"></span>
@@ -620,7 +620,7 @@ tbody tr:hover {
                     
                 </table>
                 <div class="center">
-                    <a href="nesf.html" class="btn-view-all">
+                    <a href="nesf.html" class="btn-view-all" id="bot">
                         <span style="color: #f4f4f4;">إبدأ التمارين </span>
                     </a>
                 </div>
@@ -684,11 +684,9 @@ tbody tr:hover {
                 <a href="con.html">تواصل معي</a>  
         </div>
     </div>
+    <script src="functions.js"></script>
     <script>
-        function toggleMenu() {
-            var sidenav = document.getElementById('sidenav');
-            sidenav.style.display = (sidenav.style.display == 'none' || sidenav.style.display == '') ? 'block' : 'none';
-        }
+      
         // تعريف المتغيرات
 const inheritanceRows = [
     //صفوف الجدول
@@ -698,21 +696,8 @@ const inheritanceRows = [
 
 ];
   
-   
 
   
-function setupCellValidation(inputId, statusId, correctValue) {
-    const inputCell = document.getElementById(inputId);
-    const statusCell = document.getElementById(statusId);
-  
-    inputCell.addEventListener("input", () => {
-      const value = inputCell.value.trim();
-      const isCorrect = value === correctValue;
-      const feedback = isCorrect ? "✔" : `✘\n${value}\nالجواب: ${correctValue}`;
-      statusCell.textContent = feedback;
-      statusCell.style.color = isCorrect ? "green" : "red";
-    });
-  }
   
   for (let i = 0; i < inheritanceRows.length; i++) {
     for (let j = 0; j < inheritanceRows[i].length; j++) {
