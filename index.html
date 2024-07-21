@@ -1,224 +1,379 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="rfra.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="تمارين الفرائض - حل المسائل الفرضية - مسائل على الفروض المقدرة - كتاب قواعد ومسائل توضيحية على نظم الرحبية في الفرائض - قسمة المواريث">
     <meta name="keywords" content="تمرين, حل المسائل, التدرب على حل المسائل">
-    <meta name="author" content=" الرحبي">
+    <meta name="author" content="الرحبي">
     <meta name="robots" content="د. منصور عبد الرحمن الصبحي">
-    <meta property="s" content="">
     <title>الصفحة الرئيسية</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="rfra.css">
+    <style>
+    
+
+
+
+        .intro {
+            direction: ltr;
+            font-family: 'Cairo', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            /* منع الشريط الجانبي */
+        }
+
+        .intro {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #f3f3f3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            animation: fadeOut 2s forwards 2s;
+        }
+
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+
+        .main-content {
+            display: none;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            /* إظهار الشريط الجانبي للمحتوى الرئيسي */
+        }
+
+        .container-int {
+            display: flex;
+            align-items: center;
+            position: relative;
+            opacity: 0;
+            transform: translateY(-50px);
+            animation: fadeInSlide 1s forwards;
+
+        }
+
+        .line-vertical {
+            width: 5px;
+            height: 160px;
+            background-color: #343a40;
+            margin-right: 5px;
+            position: relative;
+            margin-top: 80px;
+        }
+
+        .line-horizontal {
+            width: 240px;
+            height: 5px;
+            background-color: #c8b187;
+            position: absolute;
+            top: 53%;
+            transform: translateY(-50%);
+            left: -70px;
+        }
+
+        .text {
+            text-align: right;
+        }
+
+        .text-top {
+            font-size: 44px;
+            color: #343a40;
+            font-weight: bold;
+            line-height: 1;
+            display: inline-block;
+            padding-bottom: 5px;
+            animation-name: top;
+            animation-duration: 1.5s;
+        }
+
+        .text-bottom {
+            font-size: 35px;
+            color: #c8b187;
+            font-weight: 350;
+            line-height: 1;
+            padding-top: 10px;
+            animation-name: bottom;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fadeInSlide {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes top {
+            from {
+                padding-left: 100px;
+                left: -50px;
+                opacity: 0;
+            }
+
+            to {
+                padding-right: 0px;
+                left: 0;
+                opacity: 1;
+            }
+        }
+
+        @keyframes bottom {
+            from {
+                padding-right: 100px;
+                right: -50px;
+                opacity: 0;
+            }
+
+            to {
+                padding-left: 0px;
+                right: 0;
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <div class="container">
-
-        <nav>
-            <div class="desktop">
-                <img class="imgb4" src="42849790.png">
-                <div>
-                    <a class="brand" href="#">الرئيسية</a>
-                </div>
-                <div>
-
-                    <a href="dros.html">الدروس</a>
-
-                    <a href="nesf.html" class="active"> التمارين </a>
-
-                    <a href="abaut.html">حول</a>
-
-                    <a href="con.html">تواصل معي</a>
-                </div>
+    <div class="intro">
+        <div class="container-int">
+            <div class="line-horizontal"></div>
+            <div class="line-vertical"></div>
+            <div class="text">
+                <div class="text-top">تـمـاريـن</div>
+                <div class="text-bottom">الــفـرائــض</div>
             </div>
-            <div class="mobile">
-                <a class="brand" href="#">الرئيسية </a>
-                <a class="menu-btn" href="javascript:void(0)" onclick="toggleMenu()">
-                    <i class="fa-solid fa-bars">
+        </div>
+    </div>
 
-                    </i>
-                </a>
-            </div>
-        </nav>
-        <main>
-            <section class="parallax-effect bg-img-1">
-                <h1>
-                    أهلا بك في تمارين الفرائض
-                    <small>
-                        <p style="color: #b70606;">!! نسخة تجريبية </p>
-                        مسائل فرضية من كتاب "قواعد ومسائل توضيحية على نظم الرحبية"<br>
-                        للشيخ د.منصور بن عبد الرحمن الصبحي <br>
-                        حفظه الله وجزاه عنا خير الجزاء
-                    </small>
-                </h1>
-            </section>
-            <section class="categories">
-                <table>
-                    <h4 id="h1-t1">نموذج التمارين</h4>
-                    <p id="p-t">هلكت هالكة عن زوج وعم فما نصيب كل وارث</p>
-                    <tr class="td-title-head">
-                        <!-- السف -->
-                        <td>نصيب</td>
-                        <td>الوارث</td>
-                        <td>اصل المسألة والسهام</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <input type="text" id="s1">
-                            <span id="m1"></span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="text" id="s2">
-                            <span id="m2"></span>
-                        </td>
-                        <td>زوج</td>
-                        <td>
-                            <input type="text" id="s3">
-                            <span id="m3"></span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="text" id="s4">
-                            <span id="m4"></span>
-                        </td>
-                        <td>عم</td>
+    <div class="main-content" id="mainContent">
+        <div class="container">
 
-                        <td>
-                            <input type="text" id="s5">
-                            <span id="m5"></span>
-                        </td>
-                    </tr>
-
-                </table>
-                <div class="center">
-                    <a href="nesf.html" class="ibtn-view-all" id="bot">
-                        <span style="color: #f4f4f4;">إبدأ التمارين </span>
+            <nav>
+                <div class="desktop">
+                    <img class="imgb4" src="42849790.png">
+                    <div>
+                        <a class="brand" href="#">الرئيسية</a>
+                    </div>
+                    <div>
+    
+                        <a href="dros.html">الدروس</a>
+    
+                        <a href="nesf.html" class="active"> التمارين </a>
+    
+                        <a href="abaut.html">حول</a>
+    
+                        <a href="con.html">تواصل معي</a>
+                    </div>
+                </div>
+                <div class="mobile">
+                    <a class="brand" href="#">الرئيسية </a>
+                    <a class="menu-btn" href="javascript:void(0)" onclick="toggleMenu()">
+                        <i class="fa-solid fa-bars">
+    
+                        </i>
                     </a>
                 </div>
-
-            </section>
-
-            <section class="reviews">
-                <h2>الآيات والأحاديث</h2>
-                <div class="grid parallax-effect bg-img-2">
-                    <div class="comment">
-                        <blockquote> ﴿يُوصِيكُمُ اللَّهُ فِي أَوْلَادِكُمْ ۖ لِلذَّكَرِ مِثْلُ حَظِّ الْأُنْثَيَيْنِ ۚ
-                            فَإِنْ كُنَّ نِسَاءً فَوْقَ اثْنَتَيْنِ فَلَهُنَّ ثُلُثَا مَا تَرَكَ ۖ وَإِنْ كَانَتْ
-                            وَاحِدَةً فَلَهَا النِّصْفُ ۚ وَلِأَبَوَيْهِ لِكُلِّ وَاحِدٍ مِنْهُمَا السُّدُسُ مِمَّا
-                            تَرَكَ إِنْ كَانَ لَهُ وَلَدٌ ۚ فَإِنْ لَمْ يَكُنْ لَهُ وَلَدٌ وَوَرِثَهُ أَبَوَاهُ
-                            فَلِأُمِّهِ الثُّلُثُ ۚ فَإِنْ كَانَ لَهُ إِخْوَةٌ فَلِأُمِّهِ السُّدُسُ ۚ مِنْ بَعْدِ
-                            وَصِيَّةٍ يُوصِي بِهَا أَوْ دَيْنٍ ۗ آبَاؤُكُمْ وَأَبْنَاؤُكُمْ لَا تَدْرُونَ أَيُّهُمْ
-                            أَقْرَبُ لَكُمْ نَفْعًا ۚ فَرِيضَةً مِنَ اللَّهِ ۗ إِنَّ اللَّهَ كَانَ عَلِيمًا حَكِيمًا ﴾
-                        </blockquote>
-                        <p class="author">[النساء: ١١]</p>
+            </nav>
+            <main>
+                <section class="parallax-effect bg-img-1">
+                    <h1>
+                        أهلا بك في تمارين الفرائض
+                        <small>
+                            <p style="color: #b70606;">!! نسخة تجريبية </p>
+                            مسائل فرضية من كتاب "قواعد ومسائل توضيحية على نظم الرحبية"<br>
+                            للشيخ د.منصور بن عبد الرحمن الصبحي <br>
+                            حفظه الله وجزاه عنا خير الجزاء
+                        </small>
+                    </h1>
+                </section>
+                <section class="categories">
+                    <table>
+                        <h4 id="h1-t1">نموذج التمارين</h4>
+                        <p id="p-t">هلكت هالكة عن زوج وعم فما نصيب كل وارث</p>
+                        <tr class="td-title-head">
+                            <!-- السف -->
+                            <td>نصيب</td>
+                            <td>الوارث</td>
+                            <td>اصل المسألة والسهام</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <input type="text" id="s1">
+                                <span id="m1"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" id="s2">
+                                <span id="m2"></span>
+                            </td>
+                            <td>زوج</td>
+                            <td>
+                                <input type="text" id="s3">
+                                <span id="m3"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" id="s4">
+                                <span id="m4"></span>
+                            </td>
+                            <td>عم</td>
+    
+                            <td>
+                                <input type="text" id="s5">
+                                <span id="m5"></span>
+                            </td>
+                        </tr>
+    
+                    </table>
+                    <div class="center">
+                        <a href="nesf.html" class="ibtn-view-all" id="bot">
+                            <span style="color: #f4f4f4;">إبدأ التمارين </span>
+                        </a>
                     </div>
-                    <div class="comment">
-                        <blockquote> ﴿وَلَكُمْ نِصْفُ مَا تَرَكَ أَزْوَاجُكُمْ إِنْ لَمْ يَكُنْ لَهُنَّ وَلَدٌ ۚ فَإِنْ
-                            كَانَ لَهُنَّ وَلَدٌ فَلَكُمُ الرُّبُعُ مِمَّا تَرَكْنَ ۚ مِنْ بَعْدِ وَصِيَّةٍ يُوصِينَ
-                            بِهَا أَوْ دَيْنٍ ۚ وَلَهُنَّ الرُّبُعُ مِمَّا تَرَكْتُمْ إِنْ لَمْ يَكُنْ لَكُمْ وَلَدٌ ۚ
-                            فَإِنْ كَانَ لَكُمْ وَلَدٌ فَلَهُنَّ الثُّمُنُ مِمَّا تَرَكْتُمْ ۚ مِنْ بَعْدِ وَصِيَّةٍ
-                            تُوصُونَ بِهَا أَوْ دَيْنٍ ۗ وَإِنْ كَانَ رَجُلٌ يُورَثُ كَلَالَةً أَوِ امْرَأَةٌ وَلَهُ
-                            أَخٌ أَوْ أُخْتٌ فَلِكُلِّ وَاحِدٍ مِنْهُمَا السُّدُسُ ۚ فَإِنْ كَانُوا أَكْثَرَ مِنْ
-                            ذَٰلِكَ فَهُمْ شُرَكَاءُ فِي الثُّلُثِ ۚ مِنْ بَعْدِ وَصِيَّةٍ يُوصَىٰ بِهَا أَوْ دَيْنٍ
-                            غَيْرَ مُضَارٍّ ۚ وَصِيَّةً مِنَ اللَّهِ ۗ وَاللَّهُ عَلِيمٌ حَلِيمٌ ﴾</blockquote>
-                        <p class="author">[النساء: ١٢]</p>
+    
+                </section>
+    
+                <section class="reviews">
+                    <h2>الآيات والأحاديث</h2>
+                    <div class="grid parallax-effect bg-img-2">
+                        <div class="comment">
+                            <blockquote> ﴿يُوصِيكُمُ اللَّهُ فِي أَوْلَادِكُمْ ۖ لِلذَّكَرِ مِثْلُ حَظِّ الْأُنْثَيَيْنِ ۚ
+                                فَإِنْ كُنَّ نِسَاءً فَوْقَ اثْنَتَيْنِ فَلَهُنَّ ثُلُثَا مَا تَرَكَ ۖ وَإِنْ كَانَتْ
+                                وَاحِدَةً فَلَهَا النِّصْفُ ۚ وَلِأَبَوَيْهِ لِكُلِّ وَاحِدٍ مِنْهُمَا السُّدُسُ مِمَّا
+                                تَرَكَ إِنْ كَانَ لَهُ وَلَدٌ ۚ فَإِنْ لَمْ يَكُنْ لَهُ وَلَدٌ وَوَرِثَهُ أَبَوَاهُ
+                                فَلِأُمِّهِ الثُّلُثُ ۚ فَإِنْ كَانَ لَهُ إِخْوَةٌ فَلِأُمِّهِ السُّدُسُ ۚ مِنْ بَعْدِ
+                                وَصِيَّةٍ يُوصِي بِهَا أَوْ دَيْنٍ ۗ آبَاؤُكُمْ وَأَبْنَاؤُكُمْ لَا تَدْرُونَ أَيُّهُمْ
+                                أَقْرَبُ لَكُمْ نَفْعًا ۚ فَرِيضَةً مِنَ اللَّهِ ۗ إِنَّ اللَّهَ كَانَ عَلِيمًا حَكِيمًا ﴾
+                            </blockquote>
+                            <p class="author">[النساء: ١١]</p>
+                        </div>
+                        <div class="comment">
+                            <blockquote> ﴿وَلَكُمْ نِصْفُ مَا تَرَكَ أَزْوَاجُكُمْ إِنْ لَمْ يَكُنْ لَهُنَّ وَلَدٌ ۚ فَإِنْ
+                                كَانَ لَهُنَّ وَلَدٌ فَلَكُمُ الرُّبُعُ مِمَّا تَرَكْنَ ۚ مِنْ بَعْدِ وَصِيَّةٍ يُوصِينَ
+                                بِهَا أَوْ دَيْنٍ ۚ وَلَهُنَّ الرُّبُعُ مِمَّا تَرَكْتُمْ إِنْ لَمْ يَكُنْ لَكُمْ وَلَدٌ ۚ
+                                فَإِنْ كَانَ لَكُمْ وَلَدٌ فَلَهُنَّ الثُّمُنُ مِمَّا تَرَكْتُمْ ۚ مِنْ بَعْدِ وَصِيَّةٍ
+                                تُوصُونَ بِهَا أَوْ دَيْنٍ ۗ وَإِنْ كَانَ رَجُلٌ يُورَثُ كَلَالَةً أَوِ امْرَأَةٌ وَلَهُ
+                                أَخٌ أَوْ أُخْتٌ فَلِكُلِّ وَاحِدٍ مِنْهُمَا السُّدُسُ ۚ فَإِنْ كَانُوا أَكْثَرَ مِنْ
+                                ذَٰلِكَ فَهُمْ شُرَكَاءُ فِي الثُّلُثِ ۚ مِنْ بَعْدِ وَصِيَّةٍ يُوصَىٰ بِهَا أَوْ دَيْنٍ
+                                غَيْرَ مُضَارٍّ ۚ وَصِيَّةً مِنَ اللَّهِ ۗ وَاللَّهُ عَلِيمٌ حَلِيمٌ ﴾</blockquote>
+                            <p class="author">[النساء: ١٢]</p>
+                        </div>
+                        <div class="comment">
+                            <blockquote> ﴿يَسْتَفْتُونَكَ قُلِ اللَّهُ يُفْتِيكُمْ فِي الْكَلَالَةِ ۚ إِنِ امْرُؤٌ هَلَكَ
+                                لَيْسَ لَهُ وَلَدٌ وَلَهُ أُخْتٌ فَلَهَا نِصْفُ مَا تَرَكَ ۚ وَهُوَ يَرِثُهَا إِنْ لَمْ
+                                يَكُنْ لَهَا وَلَدٌ ۚ فَإِنْ كَانَتَا اثْنَتَيْنِ فَلَهُمَا الثُّلُثَانِ مِمَّا تَرَكَ ۚ
+                                وَإِنْ كَانُوا إِخْوَةً رِجَالًا وَنِسَاءً فَلِلذَّكَرِ مِثْلُ حَظِّ الْأُنْثَيَيْنِ ۗ
+                                يُبَيِّنُ اللَّهُ لَكُمْ أَنْ تَضِلُّوا ۗ وَاللَّهُ بِكُلِّ شَيْءٍ عَلِيمٌ ﴾</blockquote>
+                            <p class="author">[النساء: ١٧٦]</p>
+                        </div>
+                        <div class="comment">
+                            <blockquote> ((ألحقوا الفرائض بأهلها فما بقي فلأولى رجل ذكر))</blockquote>
+                            <p class="author">متفق عليه. </p>
+                        </div>
+                        <div class="comment">
+                            <blockquote> ((تعلَّموا الفرائضَ وعلِّموها الناسَ ، تعلَّموا القرآنَ وعلِّموه الناسَ ؛ فإِنَّي
+                                امرؤٌ مقبوضٌ ، والعلمُ سينقبِضُ ، وتظهرُ الفتنُ ، حتى يختلِفَ اثنانِ في فَريضَةٍ ، لا يجدانِ
+                                أحدًا يَفْصِلُ بينَهما))</blockquote>
+                            <p class="author">رواه النسائي والحاكم والدارقطني</p>
+                        </div>
+                        <div class="comment">
+                            <blockquote> ((تعلموا الفرائض فإنها من دينكم وإنها نصف العلم وإنه أول علم ينزع من أمتي))
+                            </blockquote>
+                            <p class="author">رواه ان ماجةوالدارقطني</p>
+                        </div>
+                        <div class="comment">
+                            <blockquote> (( العلم ثلاثة وما سوى ذلك فهو فضل آية محكمة أو سنة قائمة أو فريضة عادلة))
+                            </blockquote>
+                            <p class="author">رواه ابن ماجة</p>
+                        </div>
                     </div>
-                    <div class="comment">
-                        <blockquote> ﴿يَسْتَفْتُونَكَ قُلِ اللَّهُ يُفْتِيكُمْ فِي الْكَلَالَةِ ۚ إِنِ امْرُؤٌ هَلَكَ
-                            لَيْسَ لَهُ وَلَدٌ وَلَهُ أُخْتٌ فَلَهَا نِصْفُ مَا تَرَكَ ۚ وَهُوَ يَرِثُهَا إِنْ لَمْ
-                            يَكُنْ لَهَا وَلَدٌ ۚ فَإِنْ كَانَتَا اثْنَتَيْنِ فَلَهُمَا الثُّلُثَانِ مِمَّا تَرَكَ ۚ
-                            وَإِنْ كَانُوا إِخْوَةً رِجَالًا وَنِسَاءً فَلِلذَّكَرِ مِثْلُ حَظِّ الْأُنْثَيَيْنِ ۗ
-                            يُبَيِّنُ اللَّهُ لَكُمْ أَنْ تَضِلُّوا ۗ وَاللَّهُ بِكُلِّ شَيْءٍ عَلِيمٌ ﴾</blockquote>
-                        <p class="author">[النساء: ١٧٦]</p>
+                </section>
+    
+    
+                <footer>
+                    <div class="copyright">
+                        برمجة وتصميم أخوكم يوسف محمد عبد الله
+                        <br>
+                        طالب في كلية الشريعة بالمسجد النبوي
+                        <br>
+                        جميع الحقوق محفوظة © 1444 هـ - 2023 م.
                     </div>
-                    <div class="comment">
-                        <blockquote> ((ألحقوا الفرائض بأهلها فما بقي فلأولى رجل ذكر))</blockquote>
-                        <p class="author">متفق عليه. </p>
-                    </div>
-                    <div class="comment">
-                        <blockquote> ((تعلَّموا الفرائضَ وعلِّموها الناسَ ، تعلَّموا القرآنَ وعلِّموه الناسَ ؛ فإِنَّي
-                            امرؤٌ مقبوضٌ ، والعلمُ سينقبِضُ ، وتظهرُ الفتنُ ، حتى يختلِفَ اثنانِ في فَريضَةٍ ، لا يجدانِ
-                            أحدًا يَفْصِلُ بينَهما))</blockquote>
-                        <p class="author">رواه النسائي والحاكم والدارقطني</p>
-                    </div>
-                    <div class="comment">
-                        <blockquote> ((تعلموا الفرائض فإنها من دينكم وإنها نصف العلم وإنه أول علم ينزع من أمتي))
-                        </blockquote>
-                        <p class="author">رواه ان ماجةوالدارقطني</p>
-                    </div>
-                    <div class="comment">
-                        <blockquote> (( العلم ثلاثة وما سوى ذلك فهو فضل آية محكمة أو سنة قائمة أو فريضة عادلة))
-                        </blockquote>
-                        <p class="author">رواه ابن ماجة</p>
-                    </div>
-                </div>
-            </section>
-
-
-            <footer>
-                <div class="copyright">
-                    برمجة وتصميم أخوكم يوسف محمد عبد الله
-                    <br>
-                    طالب في كلية الشريعة بالمسجد النبوي
-                    <br>
-                    جميع الحقوق محفوظة © 1444 هـ - 2023 م.
-                </div>
-            </footer>
-        </main>
-        <div id="sidenav">
-            <span class="close-btn" onclick="toggleMenu()">
-                <i class="fa-solid fa-xmark"></i>
-            </span>
-            <a href="dros.html">الدروس</a>
-
-            <a href="nesf.html" class="active"> التمارين </a>
-
-            <a href="">حول</a>
-
-            <a href="con.html">تواصل معي</a>
+                </footer>
+            </main>
+            <div id="sidenav">
+                <span class="close-btn" onclick="toggleMenu()">
+                    <i class="fa-solid fa-xmark"></i>
+                </span>
+                <a href="dros.html">الدروس</a>
+    
+                <a href="nesf.html" class="active"> التمارين </a>
+    
+                <a href="">حول</a>
+    
+                <a href="con.html">تواصل معي</a>
+            </div>
         </div>
     </div>
     <script src="functions.js"></script>
     <script>
 
-        // تعريف المتغيرات
-        const inheritanceRows = [
-            //صفوف الجدول
+        // intro
+        document.addEventListener("DOMContentLoaded", function () {
+            setTimeout(function () {
+                document.querySelector(".intro").style.display = "none";
+                document.getElementById("mainContent").style.display = "block";
+            }, 2000);
+
+            // تعريف المتغيرات
+            const inheritanceRows = [
             ["2"],
             ["1/2"], ["1"],
-            ["ب"], ["1"],
+            ["ب"], ["1"]
 
         ];
 
 
-
-
-        for (let i = 0; i < inheritanceRows.length; i++) {
-            for (let j = 0; j < inheritanceRows[i].length; j++) {
-                const input = inputs[i];
-                const span = spans[i];
-                setupCellValidation(input, span, inheritanceRows[i][j]);
+            for (let i = 0; i < inheritanceRows.length; i++) {
+                for (let j = 0; j < inheritanceRows[i].length; j++) {
+                    const input = inputs[i];
+                    const span = spans[i];
+                    setupCellValidation(input, span, inheritanceRows[i][j]);
+                }
             }
-        }
+        });
+
+       
+
+        
     </script>
 </body>
 
