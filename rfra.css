@@ -1,5 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Amiri&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
 :root {
 --white: #25343f;--black: rgba(95, 86, 5, 0.373);
 --transparent-black: rgb(244 244 244 / 73%);
@@ -21,6 +23,7 @@ html,
 body {
     direction: rtl;
     font-family: 'Rubik', sans-serif;
+    font-family: 'Cairo', sans-serif;
     color: var(--white);
     background-color: var(--black);
     overflow: hidden;
@@ -501,6 +504,7 @@ width: 100%;
 
 body {
 font-family: 'Arial', sans-serif;
+font-family: 'Cairo', sans-serif;
 background-color: #f4f4f4;
 margin: 0;
 padding: 0;
