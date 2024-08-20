@@ -3,7 +3,6 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <!-- Font Awesome -->
@@ -11,25 +10,28 @@
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="rfra.css">
-
 </head>
 
 <body>
-    <div class="container">
+    <!-- شاشة التحميل -->
+    <div class="loader" id="loader"></div>
 
+
+    <div class="container">
         <nav>
             <div class="desktop">
                 <div>
-                    <a class="" href="index.html">الرئيسية</a>
+                    <a class="" href="index.html">
+                        <img class="imgb4" src="42849790.png"
+                            style="vertical-align: middle; border-style: none; width: 40px; height: 25px; padding: 1%;">
+                        <img class="imgb4" src="75845680 (1).png"
+                            style="vertical-align: middle; border-style: none; width: 40px; height: 25px; padding: 1%;">
+                    </a>
                 </div>
                 <div>
-
                     <a href="dros.html">الدروس</a>
-
-                    <a href="#" class="brand">التمارين</a>
-
-                    <a href="#">حول</a>
-
+                    <a href="#" class="brand"> التمارين </a>
+                    <a href="abaut.html">حول</a>
                     <a href="con.html">تواصل معي</a>
                 </div>
             </div>
@@ -40,8 +42,6 @@
                 </a>
             </div>
         </nav>
-
-
         <main>
 
             <section class="categories">
@@ -141,6 +141,12 @@
 
             </section>
 
+            <!-- ===================// عرض النتجة  //=================== -->
+            <div class="center">
+                <button class="btn-view-all1" id="showResultsBtn">عرض نتيجة الأجوبة</button>
+                <div id="percentageDisplay" class="percentage"></div>
+            </div>
+
             <section class="categories">
                 <div class="center">
                     <a class="btn-view-all1" href="hojbe.html">❮ التمرين السابق</a>
@@ -165,59 +171,43 @@
                 </div>
             </footer>
         </main>
+
         <div id="sidenav">
             <span class="close-btn" onclick="toggleMenu()">
                 <i class="fa-solid fa-xmark"></i>
             </span>
             <a href="dros.html">الدروس</a>
-
             <a href="#" class="active"> التمارين </a>
-
-            <a href="#">حول</a>
-
+            <a href="abaut.html">حول</a>
             <a href="con.html">تواصل معي</a>
         </div>
     </div>
+
     <script src="functions.js"></script>
     <script>
 
-        // تعريف المتغيرات
+        // =================== الأجوبة الصحيحة ===================
+        // ملاحضة!! المصفوفة تمثل جدول التمرين لكن هنا تقرأ معكوسة من اليسار الى اليمين
+
         const inheritanceRows = [
-            // 1صفوف الجدول
-            ["7"],
-            ["8"],
-            ["9"],
-            ["10"],
-
-            //1صفوف الجدول 2
-            ["13"],
-            ["15"],
-            ["17"],
-
-            //1صفوف الجدول 2
-            ["27"],
-            //1صفوف الجدول 2
-
-            ["7"],
-            ["3"],
-            ["4"],
-
-
+            "7",
+            "8",
+            "9",
+            "10",
+            //===================
+            "13",
+            "15",
+            "17",
+            //===================
+            "27",
+            //===================
+            "7",
+            "3",
+            "4"
 
         ];
 
 
-
-
-        for (let i = 0; i < inheritanceRows.length; i++) {
-            for (let j = 0; j < inheritanceRows[i].length; j++) {
-                const input = inputs[i];
-                const span = spans[i];
-                setupCellValidation(input, span, inheritanceRows[i][j]);
-            }
-        }
-
     </script>
 </body>
-
 </html>
