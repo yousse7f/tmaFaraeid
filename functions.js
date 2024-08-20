@@ -74,7 +74,7 @@ document.getElementById("showResultsBtn").addEventListener("click", () => {
 
 // تعريف البيانات للأزرار
 const buttons = [
-    { text: 'التمرين السابق ❯', href: '#', index: -1 },
+    { text: '❮ التمرين السابق', href: '#', index: -1 },
     { text: '1', href: 'nesf.html', index: 1 },
     { text: '2', href: 'ropa.html', index: 2 },
     { text: '3', href: 'thomn.html', index: 3 },
