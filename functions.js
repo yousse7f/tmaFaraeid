@@ -36,7 +36,6 @@ function setupCellValidation(inputCell, statusCell, correctValue) {
 }
 
 
-
 document.getElementById("showResultsBtn").addEventListener("click", () => {
     const loader = document.getElementById("loader");
     loader.style.display = "block";
@@ -47,21 +46,41 @@ document.getElementById("showResultsBtn").addEventListener("click", () => {
         const spans = document.querySelectorAll("span");
 
 
-// التحقق من الاجابة 
-          let correctCount = 0;
-                for (let i = 0; i < inheritanceRows.length; i++) {
-                    const input = inputs[i];
-                    const span = spans[i];
-                    const isCorrect = setupCellValidation(input, span, inheritanceRows[i]);
-                    if (isCorrect) {
-                        correctCount++;
-                    }
-                }
-// تحويل الدرجات الى النسبة المئوية
+        // التحقق من الاجابة 
+        let correctCount = 0;
+        for (let i = 0; i < inheritanceRows.length; i++) {
+            const input = inputs[i];
+            const span = spans[i];
+            const isCorrect = setupCellValidation(input, span, inheritanceRows[i]);
+            if (isCorrect) {
+                correctCount++;
+            }
+        }
+        // تحويل الدرجات الى النسبة المئوية
         const totalQuestions = inheritanceRows.length;
+
         const percentage = (correctCount / totalQuestions) * 100;
+        
+        var taq;
+        if (percentage > 90) {
+            taq = "ممتاز";
+        }
+        else if (percentage > 80) {
+            taq = "جيد جدا";
+        }
+
+        else if (percentage > 75) {
+            taq = "جيد";
+        }
+
+        else if (percentage < 75.00) {
+            taq = "أعد المحاولة ";
+
+        }
         const percentageDisplay = document.getElementById("percentageDisplay");
-        percentageDisplay.textContent = `النسبة المئوية: ${percentage.toFixed(2)}%`;
+        percentageDisplay.textContent = `النسبة المئوية: ${percentage.toFixed(2)}% ${taq}`;
+
+
     }, 3000); // الانتظار لمدة ثلاث ثواني قبل إظهار النتائج
 });
 
